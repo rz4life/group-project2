@@ -14,7 +14,7 @@ module.exports = {
       address: {
         type: Sequelize.TEXT
       },
-      type: {
+      businessType: {
         type: Sequelize.TEXT
       },
       description: {

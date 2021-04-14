@@ -10,9 +10,23 @@ app.use(require('cors')())
 
 const models = require('./models')
 
+const morgan = require('morgan')
+app.use(morgan('tiny'))
+
+//////////////////////////////write code below///////////////////////////////
+
+//userRoutes
+const userRoutes = require('./routes/userRoutes')
+app.use('/users', userRoutes) //need to use just one app.use per route!
 
 
 
+
+
+
+
+
+//////////////////////////////write code above///////////////////////////////
 
 
 const PORT = process.env.PORT || 3001

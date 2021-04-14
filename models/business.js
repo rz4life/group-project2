@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   business.init({
     name: DataTypes.TEXT,
     address: DataTypes.TEXT,
-    type: DataTypes.TEXT,
+    businessType: DataTypes.TEXT,
     description: DataTypes.TEXT,
     typeId:DataTypes.INTEGER,
     userId:DataTypes.INTEGER
