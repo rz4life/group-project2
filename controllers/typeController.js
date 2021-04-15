@@ -11,6 +11,18 @@ typeController.getAll = async (req, res) => {
     }
 }
 
+// typeController.getOne = async (req, res) => {
+//     try {
+//         let types = await models.type.findOne({
+//             where:{
+//                 id: req.params.typeId
+//             }
+//         })
+//         res.json({types})
+//     } catch (error) {
+//         res.json({error})
+//     }
+
 
 
 
