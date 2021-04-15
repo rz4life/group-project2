@@ -17,7 +17,9 @@ app.use(morgan('tiny'))
 const userRoutes = require('./routes/userRoutes')
 app.use('/users', userRoutes) //need to use just one app.use per route!
 
-
+//businessRoutes
+const businessRoutes = require('./routes/businessRoutes')
+app.use('/business', businessRoutes)
 
 
 
