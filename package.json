@@ -3,6 +3,7 @@
     "axios": "^0.21.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "morgan": "^1.10.0",
     "pg": "^8.6.0",
     "rowdy-logger": "^1.0.2",
     "sequelize": "^6.6.2"
@@ -10,5 +11,19 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
-  }
+  },
+  "name": "group-project2backend",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rz4life/group-project2backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rz4life/group-project2backend/issues"
+  },
+  "homepage": "https://github.com/rz4life/group-project2backend#readme"
 }
