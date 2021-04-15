@@ -1,10 +1,8 @@
 const express = require('express')
 const app = express()
 const axios = require('axios')
-
 const rowdy = require ('rowdy-logger')
 const routesReport = rowdy.begin(app)
-
 app.use(express.json())
 app.use(require('cors')())
 
