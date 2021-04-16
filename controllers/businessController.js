@@ -58,19 +58,23 @@ businessController.findAllBusiness = async (req, res) => {
 
 
 businessController.findOneBusiness = async (req, res) => {
-    try {
-        
-       const business = await models.business.findOne({
+  try {
+      
+     const business = await models.business.findOne({
 
-        where: {
-            id: req.params.businessId
-        }
-       }) 
-       res.json({message: "single business", business})
+      where: {
+          id: req.params.businessId
+      }
+     }) 
 
-    } catch (error) {
-      res.json(error)  
-    }
+     const user = await business.getUser()
+
+    console.log (user)
+     res.json({message: "single business", business, user})
+
+  } catch (error) {
+    res.json(error)  
+  }
 }
 
 businessController.findReviewsUsers = async (req, res) => {
