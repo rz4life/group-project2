@@ -73,6 +73,28 @@ businessController.findOneBusiness = async (req, res) => {
     }
 }
 
+businessController.findReviewsUsers = async (req, res) => {
+  try {
+      
+     const business = await models.business.findOne({
+
+      where: {
+          id: req.params.businessId
+      }
+     }) 
+
+
+     let reviews = await business.getReviews({include:models.user })
+     //get all reviews + get all users
+
+     res.json({business, reviews,})
+
+  } catch (error) {
+    res.json(error)  
+  }
+}
+
+
 
 
 

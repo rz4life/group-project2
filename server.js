@@ -25,6 +25,10 @@ app.use('/types', typeRoutes)
 const businessRoutes = require('./routes/businessRoutes')
 app.use('/businesses', businessRoutes)
 
+//reviewRoutes
+const reviewRoutes = require('./routes/reviewRoutes')
+app.use('/reviews', reviewRoutes)
+
 
 
 
