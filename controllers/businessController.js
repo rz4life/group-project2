@@ -58,23 +58,23 @@ businessController.findAllBusiness = async (req, res) => {
 
 
 businessController.findOneBusiness = async (req, res) => {
-    try {
-        
-       const business = await models.business.findOne({
+  try {
+      
+     const business = await models.business.findOne({
 
-        where: {
-            id: req.params.businessId
-        }
-       }) 
+      where: {
+          id: req.params.businessId
+      }
+     }) 
 
-       const user = await business.getUser()
+     const user = await business.getUser()
 
-      console.log (user)
-       res.json({message: "single business", business, user})
+    console.log (user)
+     res.json({message: "single business", business, user})
 
-    } catch (error) {
-      res.json(error)  
-    }
+  } catch (error) {
+    res.json(error)  
+  }
 }
 
 businessController.findReviewsUsers = async (req, res) => {
@@ -88,8 +88,9 @@ businessController.findReviewsUsers = async (req, res) => {
      }) 
 
 
-     let reviews = await business.getReviews({include:models.user })
+     let reviews = await business.getReviews({order:[['id', 'DESC']],include:models.user})
      //get all reviews + get all users
+     //review id should be in a descending order so that newest review can go to the very top
 
      res.json({business, reviews})
 
