@@ -66,7 +66,11 @@ businessController.findOneBusiness = async (req, res) => {
             id: req.params.businessId
         }
        }) 
-       res.json({message: "single business", business})
+
+       const user = await business.getUser()
+
+      console.log (user)
+       res.json({message: "single business", business, user})
 
     } catch (error) {
       res.json(error)  
