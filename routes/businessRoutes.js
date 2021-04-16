@@ -6,10 +6,11 @@ const businessRoutes = express.Router()
 
 
 
-businessRoutes.post('/', businessController.createBusiness) //create business
-businessRoutes.get('/business', businessController.findAllBusiness) // find All business
-businessRoutes.get('/business/:businessId', businessController.findOneBusiness) // find one business
+businessRoutes.post('/:userId/:typeId', businessController.createBusiness) //create business
+businessRoutes.get('/', businessController.findAllBusiness) // find All business
+businessRoutes.get('/:businessId', businessController.findOneBusiness) // find one business
 
+businessRoutes.get('/:businessId/reviews', businessController.findReviewsUsers) // find all reviews/users(who wrote reviews) from one business
 
 
 
