@@ -91,7 +91,7 @@ businessController.findReviewsUsers = async (req, res) => {
      let reviews = await business.getReviews({include:models.user })
      //get all reviews + get all users
 
-     res.json({business, reviews,})
+     res.json({business, reviews})
 
   } catch (error) {
     res.json(error)  
