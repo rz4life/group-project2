@@ -88,8 +88,9 @@ businessController.findReviewsUsers = async (req, res) => {
      }) 
 
 
-     let reviews = await business.getReviews({include:models.user })
+     let reviews = await business.getReviews({order:[['id', 'DESC']],include:models.user})
      //get all reviews + get all users
+     //review id should be in a descending order so that newest review can go to the very top
 
      res.json({business, reviews})
 
